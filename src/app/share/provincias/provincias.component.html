@@ -1,0 +1,52 @@
+<mat-toolbar class="example-toolbar">
+  <mat-icon routerLink="/mapa">home</mat-icon>
+  <h1 class="example-app-name">Monitoreo de Predios</h1>
+</mat-toolbar>
+
+<div class="containter">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 my-margin2" *ngFor="let p of pais.getProvincias">
+      <mat-card class="my-shadow " *ngIf = " p.organizationId != 689613692941107203">
+        <h5 class="title-Card my-color" [routerLink]="['/provincia', p.organizationId]">{{p.name}}</h5>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="my-center" scope="col">Redes</th>
+              <th scope="col" class="my-center">Online</th>
+              <th scope="col" class="my-center">Offline</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="my-center"  scope="row">Z3</th>
+              <td class="my-margin my-color-greend my-center"> <strong>{{p.listOnlineQ2TN.length}}</strong></td>
+              <td class="my-margin my-color-red my-center"><strong>{{p.listOfflineQ2TN.length}}</strong></td>
+            </tr>
+            <tr>
+              <th class="my-center"  scope="row">USAP</th>
+              <td class="my-margin my-color-greend my-center"><strong>{{p.listOnlineQ2PN.length}}</strong></td>
+              <td class="my-margin my-color-red my-center"><strong>{{p.listOfflineQ2PN.length}}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- <div>
+        <p class="my-margin"> Total de Dispositivos <strong>{{p.getTotalDevices.length}}</strong></p>
+        <p class="my-margin my-color-greend"> D. Online: <strong>{{p.listOnline.length}}</strong></p>
+        <ul>
+            <li><p class="my-margin">Q2TN : <strong>{{p.listOnlineQ2TN.length}}</strong></p></li>
+            <li><p class="my-margin">Q2PN : <strong>{{p.listOnlineQ2PN.length}}</strong></p></li>
+          </ul>
+
+        <p class="my-margin my-color-red"> D. Offline: <strong>{{p.listOffline.length}}</strong></p>
+        <ul>
+            <li><p class="my-margin"> D. Offline Q2TN: <strong>{{p.listOfflineQ2TN.length}}</strong></p></li>
+            <li><p class="my-margin"> D. Offline Q2PN: <strong>{{p.listOfflineQ2PN.length}}</strong></p></li>
+          </ul>
+        </div> -->
+      </mat-card>
+
+    </div>
+  </div>
+
+</div>

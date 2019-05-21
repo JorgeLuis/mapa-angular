@@ -1,0 +1,71 @@
+.example-container_DIV {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.example-container_1 {
+    position: absolute;
+    top: 9%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex: 1;
+    background-color: #c8cdcf;
+    color: azure;
+    text-align: -webkit-center;
+}
+
+.example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+    background-color: #1e88e5;
+    color: white;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+  
+.example-app-name{
+    margin-left: 8px;
+}
+
+.example-container_2 {
+    color: white;
+    background-color: #242a33;
+    font-size: xx-small;
+}
+
+
+.containter {
+    margin: 2% 4% 1% 4%;
+}
+
+.containter2 {
+    margin: 2% 3% 1% 3%;
+}
+
+.my-center {
+    text-align: center;
+    font-weight: bold;
+}
+  
+.my-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#mapa {
+    text-align: left;
+    width: 600px;
+    height: 500px;
+}
+
+.my_color {
+    background-color: #1e88e5;
+    color: white;
+}
+
+

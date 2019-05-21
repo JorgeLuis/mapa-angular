@@ -1,0 +1,58 @@
+.containter {
+    margin: 2% 4% 1% 4%;
+}
+
+.example-toolbar {
+    /* position: fixed; */
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    /* z-index: 2; */
+    background-color: #1e88e5;
+    color: white;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.example-app-name{
+    margin-left: 8px;
+}
+
+
+.my-center2 {
+    text-align: center;
+    font-weight: bold;
+    margin: 0% 0%2% 0%;
+}
+
+.my-center {
+    text-align: center;
+}
+
+.my-color {
+    color: #007bff;
+}
+
+.my-color-greend {
+    color: green;
+}
+
+.my-color-red {
+    color: red;
+}
+
+.my-left {
+    text-align: left;
+    margin: 0;
+}
+
+.my-margin {
+    margin: 0;
+}
+
+.my-margin2 {
+    margin-bottom: 1%;
+}
+.title-Card {
+    text-align: center;
+    margin: 0;
+    font-size: x-large;
+    font-weight: 700;
+}

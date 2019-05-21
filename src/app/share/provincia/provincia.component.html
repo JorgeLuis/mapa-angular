@@ -1,0 +1,154 @@
+<mat-toolbar class="example-toolbar">
+  <mat-icon routerLink="/mapa">home</mat-icon>
+  <h1 class="example-app-name">Estadisticas de las Provincia</h1>
+</mat-toolbar>
+
+<div class="containter">
+
+
+  <mat-card class="my-shadow">
+    <div class="my-center2">
+      <h2>{{name_provincia.viewValue}}</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-card class="my-shadow my-center2">
+          <div>
+            <h2 class="title-Card">USAP</h2>
+          </div>
+
+          <div *ngIf='provincia.listOnline.length'>
+            <canvas baseChart height="300" [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+              [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors"
+              [legend]="pieChartLegend">
+            </canvas>
+          </div>
+          
+          <!-- <p *ngIf='tags_online.length > 0' >Online "{{tags_online.length}}" ({{pieChartData[0]}}%) -
+            Offline "{{tags_offline.length}}" ({{pieChartData[1]}}%)
+          </p> -->
+          <!-- <p>Online "{{provincia.listOnlineQ2PN.length}}" ({{pieChartData[0]}}%) -
+            Offline "{{provincia.listOfflineQ2PN.length}}" ({{pieChartData[1]}}%)
+          </p> -->
+
+          <div class="my-shadow">
+            <mat-select color="primary" [(ngModel)]="selectedTags" name="tags" (ngModelChange)="onChange($event)">
+              <mat-option *ngFor="let e of filtros_tags" [value]="e.value">
+                {{e.viewValue}}
+              </mat-option>
+            </mat-select>
+          </div>
+
+          <br>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Name
+              </mat-panel-title>
+              <mat-panel-description>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Tags de los Predios Online: "{{provincia.listOnlineQ2PN.length}}"
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="row" *ngFor="let usap of provincia.statesListOnlineQ2PN">
+              <div class="col-sm-6 my-left">
+                <p> {{usap.name}}</p>
+              </div>
+              <div class="col-sm-6 my-left">
+                <p> {{usap.tags}}</p>
+              </div>
+            </div>
+          </mat-expansion-panel>
+          <br>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Name
+              </mat-panel-title>
+              <mat-panel-description>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Tags de los Predios Offline "{{provincia.listOfflineQ2PN.length}}"
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="row" *ngFor="let o of provincia.statesListOfflineQ2PN">
+              <div class="col-sm-6 my-left">
+                <p> {{o.name}}</p>
+              </div>
+              <div class="col-sm-6 my-left">
+                <p> {{o.tags}}</p>
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+
+        </mat-card>
+      </div>
+      <div class="col-sm-6">
+        <mat-card class="my-shadow my-center2">
+          <div>
+            <h2 class="title-Card">Z3</h2>
+          </div>
+          <div *ngIf='provincia.listOnline.length'>
+            <canvas baseChart height="300" [data]="pieChartData2" [labels]="pieChartLabels2" [chartType]="pieChartType2"
+              [options]="pieChartOptions2" [plugins]="pieChartPlugins2" [colors]="pieChartColors2"
+              [legend]="pieChartLegend2">
+            </canvas>
+          </div>
+
+          <p>Online "{{provincia.listOnlineQ2TN.length}}" ({{pieChartData2[0]}}%) -
+            Offline "{{provincia.listOfflineQ2TN.length}}" ({{pieChartData2[1]}}%)
+          </p>
+
+
+
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Name
+              </mat-panel-title>
+              <mat-panel-description>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Tags de los Predios Online: "{{provincia.listOnlineQ2TN.length}}"
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="row" *ngFor="let on of provincia.statesListOnlineQ2TN">
+              <div class="col-sm-6 my-left">
+                <p> {{on.name}}</p>
+              </div>
+              <div class="col-sm-6 my-left">
+                <p> {{on.tags}}</p>
+              </div>
+            </div>
+          </mat-expansion-panel>
+          <br>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Name
+              </mat-panel-title>
+              <mat-panel-description>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Tags de los Predios Offline "{{provincia.listOfflineQ2TN.length}}"
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="row" *ngFor="let on of provincia.statesListOfflineQ2TN">
+              <div class="col-sm-6 my-left">
+                <p> {{on.name}}</p>
+              </div>
+              <div class="col-sm-6 my-left">
+                <p> {{on.tags}}</p>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-card>
+      </div>
+    </div>
+
+  </mat-card>
+</div>

@@ -1,0 +1,99 @@
+<div class="example-container_DIV">
+  <mat-toolbar class="example-toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">Monitoreo de Predios</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-container_1" (backdropClick)="close('backdrop')">
+    <mat-sidenav class="example-container_2" #sidenav (keydown.escape)="close('escape')" disableClose>
+      <p><button mat-button (click)="changeZone(pais.getBsAs1, 'toggle button')">{{pais.getBsAs1.name}}</button></p>
+      <p><button mat-button (click)="changeZone(pais.getBsAs2, 'toggle button')">{{pais.getBsAs2.name}}</button></p>
+      <p><button mat-button (click)="changeZone(pais.getBsAs3, 'toggle button')">{{pais.getBsAs3.name}}</button></p>
+      <p><button mat-button (click)="changeZone(pais.getBsAs4, 'toggle button')">{{pais.getBsAs4.name}}</button></p>
+      <p><button mat-button (click)="changeZone(pais.getCABA, 'toggle button')">{{pais.getCABA.name}}</button></p>
+      <p><button mat-button (click)="changeZone(pais.getCatamarca, 'toggle button')">CATAMARCA</button></p>
+      <p><button mat-button (click)="changeZone(pais.getChaco, 'toggle button')">CHACO</button></p>
+      <p><button mat-button (click)="changeZone(pais.getChubut, 'toggle button')">CHUBUT</button></p>
+      <p><button mat-button (click)="changeZone(pais.getCordoba, 'toggle button')">CORDOBA</button></p>
+      <p><button mat-button (click)="changeZone(pais.getCorrientes, 'toggle button')">CORRIENTES</button></p>
+      <p><button mat-button (click)="changeZone(pais.getEntreRios, 'toggle button')">ENTRE RIOS</button></p>
+
+      <p><button mat-button (click)="changeZone(pais.getFomosa, 'toggle button')">FORMOSA</button></p>
+      <p><button mat-button (click)="changeZone(pais.getJujuy, 'toggle button')">JUJUY</button></p>
+      <p><button mat-button (click)="changeZone(pais.getLaPampa, 'toggle button')">LA PAMPA</button></p>
+      <p><button mat-button (click)="changeZone(pais.getLaRioja, 'toggle button')">LA RIOJA</button></p>
+      <p><button mat-button (click)="changeZone(pais.getMendoza, 'toggle button')">MENDOZA</button></p>
+      <p><button mat-button (click)="changeZone(pais.getMisiones, 'toggle button')">MISIONES</button></p>
+      <p><button mat-button (click)="changeZone(pais.getNeuquen, 'toggle button')">NEUQUEN</button></p>
+      <p><button mat-button (click)="changeZone(pais.getRioNegro, 'toggle button')">RIO NEGRO</button></p>
+
+      <p><button mat-button (click)="changeZone(pais.getSalta, 'toggle button')">SALTA</button></p>
+      <p><button mat-button (click)="changeZone(pais.getSanJuan, 'toggle button')">SAN JUAN</button></p>
+      <p><button mat-button (click)="changeZone(pais.getSanLuis, 'toggle button')">SAN LUIS</button></p>
+      <p><button mat-button (click)="changeZone(pais.getSantaCruz, 'toggle button')">SANTA CRUZ</button> </p>
+      <p><button mat-button (click)="changeZone(pais.getSantaFe, 'toggle button')">SANTA FE</button></p>
+      <p><button mat-button (click)="changeZone(pais.getSantiago, 'toggle button')">S. DEL ESTERO</button></p>
+      <p><button mat-button (click)="changeZone(pais.getTierraDelFuego, 'toggle button')">TIERRA DEL FUEGO</button></p>
+      <p><button mat-button (click)="changeZone(pais.getTucuman, 'toggle button')">TUCUMAN</button></p>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="containter">
+        <mat-card class="my-shadow">
+          <h1 class="my-center">Predios Online</h1>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <mat-card class="my-shadow my_color">
+                <mat-card-title>Predios</mat-card-title>
+
+              </mat-card>
+            </div>
+            <div class="col-sm-6">
+              <div style="width:100%">
+                <div style="width:90%; margin:0 auto;" id='mapa'></div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <mat-card class="my-shadow my_color">
+                <mat-card-title>Filtros</mat-card-title>
+                <mat-card class="my-shadow">
+                  <mat-card-content>
+                    <mat-select [(ngModel)]="selectedValueProvincias" name="provincias">
+                      <mat-option *ngFor="let p of provincias" [value]="p.value">
+                        {{p.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-card-content>
+                </mat-card> <br>
+
+                <mat-card class="my-shadow">
+                  <mat-card-content>
+                    <mat-select [(ngModel)]="selectedValueTipoRed" name="tiposDeRedes">
+                      <mat-option *ngFor="let t of tiposDeRedes" [value]="t.value">
+                        {{t.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-card-content>
+                </mat-card><br>
+
+                <mat-card class="my-shadow">
+                  <mat-card-content>
+                    <mat-select [(ngModel)]="selectedValueOnOff" name="estados">
+                      <mat-option *ngFor="let e of estados" [value]="e.value">
+                        {{e.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-card-content>
+                </mat-card>
+              </mat-card>
+            </div>
+          </div>
+        </mat-card>
+
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
